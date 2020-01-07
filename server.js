@@ -10,7 +10,7 @@ app.use(
   })
 );
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/name_of_your_DB", {
+mongoose.connect("mongodb://localhost/quoting_dojo", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -37,7 +37,6 @@ const QuoteSchema = new mongoose.Schema(
 );
 // create an object that contains methods for mongoose to interface with MongoDB
 const Quote = mongoose.model("Quote", QuoteSchema);
-var moment = require("moment");
 app.use(express.static(__dirname + "/static"));
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
